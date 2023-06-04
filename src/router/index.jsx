@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import PageNotFound from "../pages/PageNotFound/PageNotFound";
 import Login from "../pages/Login/Login";
+import Puchases from "../pages/Puchases/Puchases";
+import ProtectedRoute from "../components/common/ProtectedRoute/ProtectedRoute";
 
 export const router = createBrowserRouter([
     {
@@ -14,6 +16,14 @@ export const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login/>
+            },
+            {
+                path: "/purchases",
+                element: 
+                ( <ProtectedRoute>
+                    <Puchases/>
+                  </ProtectedRoute> 
+                ),
             },
             
         ],

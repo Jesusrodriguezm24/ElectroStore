@@ -1,34 +1,45 @@
+import { useDispatch, useSelector } from 'react-redux'
 import LoginForm from '../../components/login/Login/LoginForm'
-import { login } from '../../services/auth/login'
+//import { login } from '../../services/auth/login'
+import { startSessionThunk } from '../../store/slices/authSlice'
 
 
 
 import './Login.css'
+import { Navigate } from 'react-router-dom'
+
 
 const Login = () => {
-    const handleLogin = async (loginData) => {
-        const userData = await login(loginData);
-        console.log(userData)
+    const dispatch = useDispatch();
+    const isLogged = useSelector((store)=>store.auth.isLogged);
+
+    const handleLogin = (loginData) => {
+   
+        dispatch(startSessionThunk(loginData));
     }
 
   return (
     <section>
 
-        <p>Welcome! Enter your email and password to continue</p>   
-        <div>
-            <h3>Test data</h3>
-            <ul>
-                <li>
-                    <em>Email:</em> jesusrodriguez@gmail.com
-                </li>
-                <li>
-                    <em>Password:</em> 12345
-                </li>
-            </ul>
-        </div>
+        <section>
+            <p>Welcome! Enter your email and password to continue</p>   
+            <div>
+                <h3>Test data</h3>
+                <ul>
+                    <li>
+                        <em><i className='bx bx-envelope'></i></em> jesusrodriguez@gmail.com
+                    </li>
+                    <li>
+                        <em><i className='bx bx-lock-alt'></i></em> 12345
+                    </li>
+                </ul>
+            </div>
 
-        <LoginForm onLogin={handleLogin} />
-       
+            <LoginForm onLogin={handleLogin} />
+        
+        </section>
+
+        {(isLogged) && <Navigate to="/"/>}
     </section>
   )
 }
