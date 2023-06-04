@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import PageNotFound from "../components/PageNotFound/PageNotFound";
+import PageNotFound from "../pages/PageNotFound/PageNotFound";
+import Login from "../pages/Login/Login";
 
 export const router = createBrowserRouter([
     {
@@ -12,8 +13,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/login",
-                element: <p>Aqui va el form de login</p>
-            }
+                element: <Login/>
+            },
+            
         ],
     },
     {
