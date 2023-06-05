@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import './App.css'
 import Footer from "./components/common/Footer/Footer";
+import Header from "./components/common/Header/Header";
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
       <header>
-        <h1 style={{textAlign:'center'}}>Electro Store</h1>
+        <Header/>
       </header>
       <main>
         <Outlet/>

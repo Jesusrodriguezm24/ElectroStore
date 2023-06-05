@@ -4,6 +4,7 @@ import PageNotFound from "../pages/PageNotFound/PageNotFound";
 import Login from "../pages/Login/Login";
 import Puchases from "../pages/Puchases/Puchases";
 import ProtectedRoute from "../components/common/ProtectedRoute/ProtectedRoute";
+import Profile from "../pages/Profile/Profile";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +26,14 @@ export const router = createBrowserRouter([
                   </ProtectedRoute> 
                 ),
             },
+            {
+                path: "/profile",
+                element: (
+                    <ProtectedRoute>
+                        <Profile/>
+                    </ProtectedRoute>
+                ),
+            }
             
         ],
     },

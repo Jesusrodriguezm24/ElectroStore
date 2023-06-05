@@ -6,12 +6,15 @@ import { startSessionThunk } from '../../store/slices/authSlice'
 
 
 import './Login.css'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 
 
 const Login = () => {
     const dispatch = useDispatch();
     const isLogged = useSelector((store)=>store.auth.isLogged);
+    const location = useLocation();
+    
+    const from = location.store?.from;
 
     const handleLogin = (loginData) => {
    
@@ -39,7 +42,8 @@ const Login = () => {
         
         </section>
 
-        {(isLogged) && <Navigate to="/"/>}
+        {(isLogged) && <Navigate to={from ?? "/"}/>}
+
     </section>
   )
 }
