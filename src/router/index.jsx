@@ -5,6 +5,7 @@ import Login from "../pages/Login/Login";
 import Puchases from "../pages/Puchases/Puchases";
 import ProtectedRoute from "../components/common/ProtectedRoute/ProtectedRoute";
 import Profile from "../pages/Profile/Profile";
+import Home from "../pages/Home/Home";
 
 export const router = createBrowserRouter([
     {
@@ -12,7 +13,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <p>Lista de productos</p>
+                element: <Home/>
             },
             {
                 path: "/login",
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
                         <Profile/>
                     </ProtectedRoute>
                 ),
+            },
+            {
+                path: "product/:productId",
+                element: <p>Products</p>
             }
             
         ],

@@ -9,28 +9,34 @@ const Header = () => {
 
   return (
     <header className='header_container'>
-      <h1>Ecommerce</h1>
+      <div className='header_title'>
+        <h1>e-commerce</h1>
+      </div>
 
-      <ul>
-        <li>
-          <NavLink to={userTo}>
+      <div className='header_list_item'>
+          <ul className='header_list'>
 
-          </NavLink>
-        </li>
+            <NavLink to={userTo} className='header_navlink_items'>
+              <li className='header_item'>
+                  <i className='bx bx-user'></i>  
+              </li>
+            </NavLink>
 
-        <li>
-          <NavLink>
+            <NavLink className='header_navlink_items'>
+              <li className='header_item'>
+                  <i className='bx bx-box'></i>
+              </li>
+            </NavLink>
 
-          </NavLink>
-        </li>
+            <NavLink className='header_navlink_items'>
+              <li className='header_item'>
+                  <i className='bx bx-cart' ></i>
+              </li>
+            </NavLink>
+          </ul>
 
-        <li>
-          <NavLink>
-            
-          </NavLink>
-        </li>
-
-      </ul>
+      </div>
+      
 
     </header>
   )

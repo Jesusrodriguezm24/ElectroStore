@@ -22,9 +22,9 @@ const Login = () => {
     }
 
   return (
-    <section>
+    <section className='page_login_container'>
 
-        <section>
+        <section className='page_login_data'>
             <p>Welcome! Enter your email and password to continue</p>   
             <div>
                 <h3>Test data</h3>
