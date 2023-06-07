@@ -1,19 +1,30 @@
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import './Header.css'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { reset } from '../../../store/slices/authSlice';
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const isLogged = useSelector((store) => store.auth.isLogged);
 
   const userTo = isLogged ? "/profile" : "/login";
 
+  const logout = () => {
+    dispatch(reset()); 
+     navigate("/login");
+  }
+
   return (
     <header className='header_container'>
       <div className='header_title'>
-        <h1>e-commerce</h1>
+        <Link to="/">
+          <h1>e-commerce</h1>
+        </Link>
       </div>
 
-      <div className='header_list_item'>
+      <nav>
+        <div className='header_list_item'>
           <ul className='header_list'>
 
             <NavLink to={userTo} className='header_navlink_items'>
@@ -35,8 +46,10 @@ const Header = () => {
             </NavLink>
           </ul>
 
-      </div>
+        </div> 
+      </nav>
       
+      { isLogged && <button onClick={logout}>Log Out</button> }
 
     </header>
   )

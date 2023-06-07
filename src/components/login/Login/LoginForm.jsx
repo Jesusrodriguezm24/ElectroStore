@@ -27,19 +27,24 @@ const LoginForm = ( {onLogin} ) => {
 
   return (
    <form onSubmit={handleSubmit}>
-        <div>
+        <div className='form_label_name'>
             <label htmlFor={emailId}>Email</label>
         </div>
-        <input type="email" onChange={handleChange} value={formData.email} name="email" id={emailId} required/>
+        <input type="email" className='form_input_data' onChange={handleChange} value={formData.email} name="email" id={emailId} required/>
         
-        <div>
+        <div className='form_label_name'>
             <label htmlFor={passwordId}>Password</label>
         </div>
-        <input type={isPasswordVisible ? 'text' : 'password'} onChange={handleChange} value={formData.password} name="password" id={passwordId} required/>
-        <button type='button'><i className='bx bx-low-vision' onClick={()=>setIsPasswordVisible(!isPasswordVisible)}></i></button>
+
+        <div className='form_input_btn_visible'>
+            <input type={isPasswordVisible ? 'text' : 'password'} className='form_input_data' onChange={handleChange} value={formData.password} name="password" id={passwordId} required/>
+            
+            <button  type='button'><i className='bx bx-low-vision btn_eye' onClick={()=>setIsPasswordVisible(!isPasswordVisible)}></i></button>
+        </div>
+
 
         <div>
-            <button type="submit">Login</button>
+            <button type="submit" className='form_btn_login'>Login</button>
         </div>
    </form>
   )

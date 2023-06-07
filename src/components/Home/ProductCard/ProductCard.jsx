@@ -5,6 +5,7 @@ const ProductCard = ({ product }) => {
     const handleAdd = (e) => {
         e.preventDefault();
     }
+    
   return (
     <section>
         <section>
@@ -25,7 +26,7 @@ const ProductCard = ({ product }) => {
         </section>
         
         <button onClick={handleAdd}>
-            Carritoooo img
+            <i className='bx bx-cart-add'> Add</i>
         </button>
     </section>
   )

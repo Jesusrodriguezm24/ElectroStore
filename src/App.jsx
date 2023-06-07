@@ -7,18 +7,18 @@ function App() {
 
 
   return (
-    <>
+    <section className="app_container">
       <header>
         <Header/>
       </header>
-      <main>
+      <main className="main_container">
         <Outlet/>
       </main>
       <footer>
         <Footer/>
       </footer>
 
-    </>
+    </section>
   )
 }
 

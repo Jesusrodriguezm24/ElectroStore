@@ -25,14 +25,14 @@ const Login = () => {
     <section className='page_login_container'>
 
         <section className='page_login_data'>
-            <p>Welcome! Enter your email and password to continue</p>   
-            <div>
-                <h3>Test data</h3>
-                <ul>
-                    <li>
+            <p className='page_login_text'>Welcome! Enter your email and password to continue</p>   
+            <div className='page_login_test_data'>
+                <h3 className='test_data_title'>Test data</h3>
+                <ul className='test_data_list'>
+                    <li className='test_data_item'>
                         <em><i className='bx bx-envelope'></i></em> jesusrodriguez@gmail.com
                     </li>
-                    <li>
+                    <li className='test_data_item'>
                         <em><i className='bx bx-lock-alt'></i></em> 12345
                     </li>
                 </ul>

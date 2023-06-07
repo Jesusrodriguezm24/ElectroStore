@@ -2,11 +2,11 @@
 import ProductCard from "../../components/Home/ProductCard/ProductCard";
 import { useProducts } from "../../hooks/queries/useProducts";
 
-import './Home.css'
+
 import { Link } from "react-router-dom";
 
 
-
+import './Home.css'
 const Home = () => {
   const { data, isLoading, isError } = useProducts();
 
@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <section>
-        <h1>products</h1>
+      <h1>products</h1>
 
 
       <ul>

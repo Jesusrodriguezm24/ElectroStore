@@ -1,7 +1,7 @@
 .page_login_container{
     width: 100%;
-    height: 100;
-    background: #e80e0e;
+    height: 100%;
+    background: #F7F7F7;
 
     display: flex;
     justify-content: center;
@@ -9,12 +9,46 @@
     
 }
 .page_login_data{
-    background-color: blue;
+    background-color: #FFFFFF;
     border-radius: 10px;
     max-width: 400px;
     padding: 25px;
     width: 100%;
-
+}
+.page_login_text{
+    display: block;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.page_login_test_data{
+    background: #d8f5fd;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 12px;
+}
+.test_data_title{
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.test_data_list{
+    list-style: none;
     
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.1rem;
+}
+.test_data_item{
+    box-sizing: border-box;
+    color: #515151;
+    font-family: Yantramanav,sans-serif;
+}
+.test_data_item i{
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
 }

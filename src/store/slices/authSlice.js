@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { login } from "../../services/auth/login";
 
-const initialState = {
+const emptyState = {
     id: '',
     token: '',
     fullName: '',
@@ -11,7 +11,7 @@ const initialState = {
 
 const authSlice = createSlice({
     name: 'auth',
-    initialState,
+    initialState: JSON.parse(localStorage.getItem('sessionData')) ?? emptyState ,
     reducers: {
         updateUserData(state, action){
             const newUserData = action.payload;
@@ -20,20 +20,28 @@ const authSlice = createSlice({
             state.fullName = newUserData.fullName;
             state.email = newUserData.email;
 
+            localStorage.setItem('sessionData', JSON.stringify({ ...state }));
         },
 
         updateToken(state, action) {
             const newToken = action.payload;
 
             state.token = newToken;
+
+            localStorage.setItem('sessionData', JSON.stringify({ ...state }));
         },
 
         startSession(state){
             state.isLogged = true;
+
+            localStorage.setItem('sessionData', JSON.stringify({ ...state }));
         },
 
         reset(){
-          return initialState;
+
+          localStorage.removeItem('sessionData') ;
+
+          return emptyState;
         }
 
     }
