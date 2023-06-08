@@ -1,9 +1,10 @@
 import { axiosInstance } from "../../api/axiosInstance";
 
-export const getAllProducts = async () => {
+export const getAllCategories = async () => {
     try {
-        const res = await axiosInstance.get('products/');
+        const res = await axiosInstance.get('categories');
         return res.data;
+
     } catch (error) {
         if (error.response) throw error.response.data;
         else throw new error('Something went wrong');

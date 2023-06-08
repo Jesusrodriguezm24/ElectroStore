@@ -1,32 +1,36 @@
 
-import ProductCard from "../../components/Home/ProductCard/ProductCard";
-import { useProducts } from "../../hooks/queries/useProducts";
+import { useCallback, useId, useRef } from 'react';
+import CategoriesFilter from '../../components/Home/CategoriesFilter/CategoriesFilter';
+import ProductList from '../../components/Home/ProductList/ProductList'
 
-
-import { Link } from "react-router-dom";
 
 
 import './Home.css'
+import { Form, useSubmit } from 'react-router-dom';
 const Home = () => {
-  const { data, isLoading, isError } = useProducts();
+  const formId = useId();
+  const submit = useSubmit();
+  const formRef = useRef();
 
-  if (isLoading) return <p>Loading pro</p>
+  const handleChangeCategories = useCallback(
+      ()=> {
+        if (!formRef.current) return;
 
-  if (isError) return <p>Algo salio mal</p>
+        submit(formRef.current);
+      },
+      [submit]
+    );
 
   return (
-    <section>
-      <h1>products</h1>
+    <section className='home_container'>
+      <aside>
+        <CategoriesFilter formId={formId} onChangeCategories={handleChangeCategories}/>
+      </aside>
+      <section>
+        <Form id={formId} ref={formRef}></Form>
+        <ProductList/>
+      </section>
 
-
-      <ul>
-        {data.map(product => <li key={product.id}>
-                               <Link to={"/product/" + product.id}>
-                                    <ProductCard product={product}/>
-                               </Link>
-                                
-                            </li>)}
-      </ul>
     </section>
   )
 }

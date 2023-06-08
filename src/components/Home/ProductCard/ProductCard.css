@@ -1,0 +1,39 @@
+.product_card_container{ 
+  border: thin solid #dcd9d9;
+  border-radius: 1rem;
+}
+.product_card_img{
+    position: relative;
+
+    height: 20rem;
+ 
+ 
+}
+.card_img{
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 80%;
+    height: 20rem;
+    object-fit: contain;
+
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease-in ;
+}
+.hidden{
+    opacity: 0;
+}
+.product_card_img:hover .hidden{
+    opacity: 1;
+}
+.visible{
+    opacity: 1;
+}
+.product_card_img:hover .visible{
+    opacity: 0;
+}
+
+
+
+

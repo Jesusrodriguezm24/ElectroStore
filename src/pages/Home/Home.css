@@ -1,0 +1,6 @@
+.home_container{
+    margin-top: 5rem;
+
+    display: grid;
+    grid-template-columns: minmax(20%, 220px) 1fr;
+} 

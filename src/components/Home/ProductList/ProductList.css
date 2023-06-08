@@ -1,0 +1,13 @@
+.product_list_container{
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.product_list_container li{
+    width: 100%;
+    max-width: 300px;
+}

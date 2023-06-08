@@ -7,18 +7,16 @@ const ProductCard = ({ product }) => {
     }
     
   return (
-    <section>
-        <section>
-            <div>
-                <img src="" alt="" />
-                <img src={product.images[0].url} alt={product.title + "image 1"} />
-                <img src={product.images[1].url} alt={product.title + "image 2"} />
+    <section className='product_card_container'>
+        <section className='product_card_data'>
+            <div className='product_card_img' >
+                <img className='card_img visible' src={product.images[0].url} alt={product.title + "image 1"} />
+                <img className='card_img hidden' src={product.images[1].url} alt={product.title + "image 2"} />
             </div>
 
             <p>{product.brand}</p>
             <h2>{product.title}</h2>
-        </section>
-        <section>
+   
             <p>Price</p>
             <h3>
                 <em>{product.price}</em>
