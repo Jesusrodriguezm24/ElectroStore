@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
     const isLogged = useSelector(store => store.auth.isLogged);
     const navigate = useNavigate();
 
-    const isProductInCart = data?.some(cartProduct => cartProduct.productId === product.id);
+    let isProductInCart = data?.some(cartProduct => cartProduct.productId === product.id);
 
     const isAddVisible = !isLogged || !isProductInCart;
 
@@ -43,11 +43,9 @@ const ProductCard = ({ product }) => {
                 <i className='bx bx-cart-add'> Add</i>
                 </button>
             </div>
-
-            
         )}
 
-        { !isAddVisible && <p>Ya esta en carrito</p>}
+        { !isAddVisible && <p>The product is already in the cart</p>}
         
     </section>
   )

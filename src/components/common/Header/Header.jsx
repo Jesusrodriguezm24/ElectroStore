@@ -18,7 +18,8 @@ const Header = ({ updateCarVisible }) => {
   }
 
   const handleCartClik = () => {
-
+      if (isLogged) updateCarVisible();
+      else navigate("/login");
     
   }
 
@@ -53,7 +54,7 @@ const Header = ({ updateCarVisible }) => {
 
            
               <li className='header_item' onClick={()=>{}}>
-                 <button onClick={updateCarVisible} className='btn_cart'><i className='bx bx-cart' ></i></button> 
+                 <button onClick={handleCartClik} className='btn_cart'><i className='bx bx-cart' ></i></button> 
               </li>
             
 

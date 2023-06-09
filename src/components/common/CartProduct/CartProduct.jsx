@@ -10,6 +10,8 @@ const CartProduct = ( { cartProduct } ) => {
     const [quantity, setQuantity] = useState(initialQuantity);
     const isLogged = useSelector(store => store.auth.isLogged);
 
+    console.log(cartProduct)
+
     const increment = () => {
         const newQuantity = quantity + 1;
         const stock = 10;
@@ -22,7 +24,7 @@ const CartProduct = ( { cartProduct } ) => {
       };
 
       const handleUpdate = () => {
-        if (isLogged) mutate({cartProductId: cartProduct.id, });
+        //if (isLogged) mutate({cartProductId: cartProduct.id, });
         ////////////////
       }
 
@@ -30,25 +32,27 @@ const CartProduct = ( { cartProduct } ) => {
     <article>
                                                     
         <div>
-            <img src={cartProduct.product.image[0].url} alt={cartProduct.product.title} />
+           <img src={cartProduct.product.images[0].url} alt={cartProduct.product.title} />
         </div>
         <div>
             <header>
                     <h4>{cartProduct.product.title}</h4>
-                 <button>eliminarrrrrrr</button>
+                 <button>
+                    <i className='bx bxs-trash'></i>
+                 </button>
             </header>
             <div>
                  <button onClick={decrement}> - </button>
-                      <p> 1 </p>
+                      <p> {quantity} </p>
                  <button onClick={increment}> + </button>
              </div>
 
                 {initialQuantity !== quantity && <button onClick={handleUpdate} disabled={isLoading}>Update Cart</button>}
 
                 <div>
-                 <h5>Total</h5>
+                 <h5>Total:</h5>
                  <p>
-                     <em>{initialQuantity * price}</em>
+                     <em>$ {initialQuantity * price}</em>
                 </p>
              </div>
          </div>
