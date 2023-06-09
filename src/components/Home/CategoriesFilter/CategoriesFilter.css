@@ -1,0 +1,11 @@
+.categories_container{
+    margin: 1rem;
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    border: none;
+}

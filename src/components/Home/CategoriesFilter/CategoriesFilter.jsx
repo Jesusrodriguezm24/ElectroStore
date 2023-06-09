@@ -41,8 +41,8 @@ const CategoriesFilter = ({ formId, onChangeCategories, initialCategories = [] }
     if (isError) return <p>{error.message ?? 'No categories'}</p>  
 
  return (
-    <fieldset form={formId}>
-        <length>Categories</length>
+    <fieldset form={formId} className='categories_container'>
+        <h2>Categories</h2>
 
         <div>
             <input type="checkbox" onChange={(e)=> handleEmpty(e.target.checked)} checked={categoryIdList.length === 0} form={formId} name="categories" id="all_categories" value=""/>
