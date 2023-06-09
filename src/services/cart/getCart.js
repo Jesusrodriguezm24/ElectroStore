@@ -1,8 +1,8 @@
 import { axiosInstance } from "../../api/axiosInstance";
 
-export const getAllProducts = async (categories, title) => {
+export const getCart = async (token) => {
     try {
-        const res = await axiosInstance.get('products/', { params:{ title, categoryId: categories }});
+        const res = await axiosInstance.get('cart', { headers: {Authorization: `Bearer ${token}}`}});
         return res.data;
     } catch (error) {
         if (error.response) throw error.response.data;

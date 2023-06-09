@@ -15,6 +15,11 @@ const Header = () => {
      navigate("/login");
   }
 
+  const handleCartClik = () => {
+
+    
+  }
+
   return (
     <header className='header_container'>
       <div className='header_title'>
@@ -23,7 +28,7 @@ const Header = () => {
         </Link>
       </div>
 
-      <nav>
+     
         <div className='header_list_item'>
           <ul className='header_list'>
 
@@ -44,12 +49,18 @@ const Header = () => {
                   <i className='bx bx-cart' ></i>
               </li>
             </NavLink>
+
+              { isLogged && (
+                <li>
+                    <button className='btn_log_out' onClick={logout}><i className='bx bx-log-out'></i></button>
+                </li>
+              )}
           </ul>
 
         </div> 
-      </nav>
+    
       
-      { isLogged && <button onClick={logout}>Log Out</button> }
+      
 
     </header>
   )

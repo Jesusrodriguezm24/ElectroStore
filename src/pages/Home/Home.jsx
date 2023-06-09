@@ -1,16 +1,19 @@
 
-import { useCallback, useId, useRef } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import CategoriesFilter from '../../components/Home/CategoriesFilter/CategoriesFilter';
 import ProductList from '../../components/Home/ProductList/ProductList'
-
+import { Form, useLoaderData, useSubmit } from 'react-router-dom';
 
 
 import './Home.css'
-import { Form, useSubmit } from 'react-router-dom';
+
 const Home = () => {
   const formId = useId();
   const submit = useSubmit();
   const formRef = useRef();
+  const [titleValue, setTitleValue] = useState("");
+  const { categories, title } = useLoaderData();
+
 
   const handleChangeCategories = useCallback(
       ()=> {
@@ -21,14 +24,21 @@ const Home = () => {
       [submit]
     );
 
+    useEffect(() => {
+      setTitleValue(title);
+    }, [title])
+    
   return (
     <section className='home_container'>
       <aside>
-        <CategoriesFilter formId={formId} onChangeCategories={handleChangeCategories}/>
+        <CategoriesFilter formId={formId} onChangeCategories={handleChangeCategories} initialCategories={categories}/>
       </aside>
       <section>
-        <Form id={formId} ref={formRef}></Form>
-        <ProductList/>
+        <Form id={formId} ref={formRef}> 
+          <input type="search" name="title" value={titleValue} onChange={(e)=>setTitleValue(e.target.value)} placeholder="What are you looking for?" />
+
+        </Form>
+        <ProductList categories={categories} title={title}/>
       </section>
 
     </section>

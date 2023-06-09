@@ -1,23 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useCategories } from '../../../hooks/queries/useCategories'
 import './CategoriesFilter.css'
 
-const CategoriesFilter = ({ formId, onChangeCategories }) => {
+const CategoriesFilter = ({ formId, onChangeCategories, initialCategories = [] }) => {
     const { data, isLoading, isError, error } = useCategories();
-    const [categoryIdList, setCategoryIdList] = useState([]);
+    const [categoryIdList, setCategoryIdList] = useState(initialCategories);
+    const isFirstRender = useRef(true);
 
     const addToList = (categoryId) => {
         const copyList = [...categoryIdList];
         copyList.push(categoryId);
         
-        const copyNoRepeats = [...new Set(copyList)]
-        setCategoryIdList(copyNoRepeats);
+        const copyNoRepeats = [...new Set(copyList)];
+        if (copyNoRepeats.length === data.length) setCategoryIdList([]);
+        else setCategoryIdList(copyNoRepeats);
     }
 
     const removeFromList = (categoryId) => {
         const newList = categoryIdList.filter(id => id != categoryId);
         setCategoryIdList(newList);
-    }
+    } 
 
     const handleChange = (isCheked, categoryId) => {
         if(!categoryId) setCategoryIdList([]);
@@ -30,7 +32,8 @@ const CategoriesFilter = ({ formId, onChangeCategories }) => {
     }
 
     useEffect(() => {
-        onChangeCategories();
+        if (isFirstRender.current) isFirstRender.current = false;
+        else onChangeCategories();
     }, [categoryIdList, onChangeCategories]);
 
     if  (isLoading) return <p>Loading categories...</p>

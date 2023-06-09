@@ -6,6 +6,8 @@ import Puchases from "../pages/Puchases/Puchases";
 import ProtectedRoute from "../components/common/ProtectedRoute/ProtectedRoute";
 import Profile from "../pages/Profile/Profile";
 import Home from "../pages/Home/Home";
+import { homeLoader } from "./loaders/homeLoader";
+import ProductDetail from "../pages/ProductDetail/ProductDetail";
 
 export const router = createBrowserRouter([
     {
@@ -13,6 +15,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/",
+                loader: homeLoader,
                 element: <Home/>
             },
             {
@@ -37,7 +40,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "product/:productId",
-                element: <p>Detalles del Products</p>
+                element: <ProductDetail/>
             }
             
         ],

@@ -5,8 +5,8 @@ import ProductCard from '../ProductCard/ProductCard';
 
 import './ProductList.css';
 
-const ProductList = () => {
-  const { data, isLoading, isError } = useProducts();
+const ProductList = ({ categories, title, excludeIds = [] }) => {
+  const { data, isLoading, isError } = useProducts(categories, title);
     
   if (isLoading) return <p>Loading pro</p>
 
@@ -14,7 +14,7 @@ const ProductList = () => {
 
   return (
     <ul className="product_list_container">
-    {data.map(product => <li key={product.id}>
+    {data.filter(product => !excludeIds.includes(product.id)).map(product => <li key={product.id}>
                            <Link to={"/product/" + product.id}>
                                 <ProductCard product={product}/>                          
                            </Link>                      
