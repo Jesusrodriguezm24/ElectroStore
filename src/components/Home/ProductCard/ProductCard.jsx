@@ -29,18 +29,22 @@ const ProductCard = ({ product }) => {
                 <img className='card_img hidden' src={product.images[1].url} alt={product.title + "image 2"} />
             </div>
 
-            <p>{product.brand}</p>
-            <h2>{product.title}</h2>
+            <p className='sub_name'>{product.brand}</p>
+            <h2 className='info_data'>{product.title}</h2>
    
-            <p>Price</p>
+            <p className='sub_name'>Price</p>
             <h3>
-                <em>{product.price}</em>
+                <em className='info_data_price'>{product.price}</em>
             </h3>
         </section>
         { isAddVisible &&(
-            <button onClick={handleAdd}>
+            <div className='dv_btn_add'>
+                <button className='bnt_add_to_cart_card' onClick={handleAdd}>
                 <i className='bx bx-cart-add'> Add</i>
-             </button>
+                </button>
+            </div>
+
+            
         )}
 
         { !isAddVisible && <p>Ya esta en carrito</p>}

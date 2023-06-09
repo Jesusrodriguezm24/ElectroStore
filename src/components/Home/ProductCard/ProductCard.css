@@ -5,9 +5,12 @@
 .product_card_img{
     position: relative;
 
-    height: 20rem;
+    height: 16rem;
  
- 
+}
+.product_card_img img{
+    width: 250px;
+    height: 250px;
 }
 .card_img{
     position: absolute;
@@ -33,7 +36,41 @@
 .product_card_img:hover .visible{
     opacity: 0;
 }
+.sub_name{
+    font-size: 1.2rem;
 
+    color:#515151b1;
+}
+.info_data{
+    font-size: 1.2rem;
+    height: 4rem;
+    padding-left: 0.5rem;
+}
+.info_data_price{
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+}
+.dv_btn_add{
+    display: flex;
+    justify-content: end;
+
+   padding: 1rem;
+}
+.bnt_add_to_cart_card{
+    width: 4rem;
+    height: 4rem;
+
+    border-radius: 50%;
+
+    color: #fff;
+    font-size: 1rem;
+    background-color:#f85555 ;
+
+    cursor: pointer;
+}
+.bnt_add_to_cart_card i{
+    font-size: 1.2rem;
+}
 
 
 

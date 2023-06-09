@@ -5,33 +5,38 @@ import CartProduct from '../CartProduct/CartProduct';
 import './Cart.css'
 
 const Cart = ({ isVisible }) => {
+
     const { data, isLoading, isError, error } = useCart();
-    const toggleCart = isVisible ? "" : "" ;
+
+    const toggleCart = isVisible ? "wrapper-cart" : "wrapper-cart--hidden" ;
+ 
+
+   
     
 
-    const reducer = (acc, cartProduct) => {
-        const quantity = Number(cartProduct.quantity);
-        const price =  Number(cartProduct.product.price);
+    // const reducer = (acc, cartProduct) => {
+    //     const quantity = Number(cartProduct.quantity);
+    //     const price =  Number(cartProduct.product.price);
 
-        return acc + quantity * price;
-    }
+    //     return acc + quantity * price;
+    // }
 
     const total = data?.reduce((acc, cartProduct)=> acc + Number(cartProduct.quantity) * Number(cartProduct.product.price)) ?? 0;
 
-    if (isLoading) return <p>Loading Cart...</p>
+    // if (isLoading) return <p>Loading Cart...</p>
 
-    if (isError) return <p>{error.message ?? "Not load cart"}</p>
+    // if (isError) return <p>{error.message ?? "Not load cart"}</p>
 
   return (
-    <div>
-        <aside className='card'>
+    <div className={toggleCart}>
+        <aside className='cart'>
             <h2 className='cart_title'>Shopping Cart</h2>
 
-            {!data.length && <p>Empty Cart</p>}
+            {/* {!data.length && <p>Empty Cart</p>}
 
             {Boolean(data.length) && (
                 <section>
-                      <ul>
+                      <ul> 
                             {data.map(cartProduct => <li key={cartProduct.id}>
                                                         <CartProduct cartProduct={cartProduct} />
                                                     </li>)}
@@ -50,7 +55,7 @@ const Cart = ({ isVisible }) => {
                 
               
                 
-            )}
+            )} */}
         </aside>
     </div>
   )

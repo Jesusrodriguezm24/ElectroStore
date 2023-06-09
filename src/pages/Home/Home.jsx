@@ -34,10 +34,13 @@ const Home = () => {
         <CategoriesFilter formId={formId} onChangeCategories={handleChangeCategories} initialCategories={categories}/>
       </aside>
       <section>
-        <Form id={formId} ref={formRef}> 
-          <input type="search" name="title" value={titleValue} onChange={(e)=>setTitleValue(e.target.value)} placeholder="What are you looking for?" />
+        <div className='input_search'>
+          <Form id={formId} ref={formRef}> 
+            <input className='input_search_value' type="search" name="title" value={titleValue} onChange={(e)=>setTitleValue(e.target.value)} placeholder="What are you looking for?" />
 
-        </Form>
+          </Form>
+        </div>
+       
         <ProductList categories={categories} title={title}/>
       </section>
 

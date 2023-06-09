@@ -1,16 +1,18 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import './Header.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { reset } from '../../../store/slices/authSlice';
 
-const Header = () => {
+
+import './Header.css'
+const Header = ({ updateCarVisible }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLogged = useSelector((store) => store.auth.isLogged);
 
   const userTo = isLogged ? "/profile" : "/login";
+  const puchaseTo = isLogged ? "/purchases" : "/login" ;
 
-  const logout = () => {
+  const logout = () => { 
     dispatch(reset()); 
      navigate("/login");
   }
@@ -18,6 +20,11 @@ const Header = () => {
   const handleCartClik = () => {
 
     
+  }
+
+  const getClass = ({ isActivate }) => {
+    if (isActivate) return "header_navlink_items header_navlink_items--activate"
+    else return "header_navlink_items"
   }
 
   return (
@@ -32,23 +39,23 @@ const Header = () => {
         <div className='header_list_item'>
           <ul className='header_list'>
 
-            <NavLink to={userTo} className='header_navlink_items'>
+            <NavLink to={userTo} className={getClass}>
               <li className='header_item'>
                   <i className='bx bx-user'></i>  
               </li>
             </NavLink>
 
-            <NavLink className='header_navlink_items'>
+            <NavLink to={puchaseTo} className={getClass}>
               <li className='header_item'>
                   <i className='bx bx-box'></i>
               </li>
             </NavLink>
 
-            <NavLink className='header_navlink_items'>
-              <li className='header_item'>
-                  <i className='bx bx-cart' ></i>
+           
+              <li className='header_item' onClick={()=>{}}>
+                 <button onClick={updateCarVisible} className='btn_cart'><i className='bx bx-cart' ></i></button> 
               </li>
-            </NavLink>
+            
 
               { isLogged && (
                 <li>

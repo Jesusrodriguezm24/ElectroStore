@@ -37,12 +37,12 @@ const ProductDetail = () => {
    
   return (
     <section>
-        <section>
-            <section>
+        <section className='product_detail_data'>
+            <section className='product_detail_img'>
                 <img src={data.images[0].url} alt={data.title} />
             </section>
 
-            <section>
+            <section className='product_detail_item'>
                 <h3>{data.brand}</h3>
 
                 <h2>{data.title}</h2>
@@ -51,31 +51,35 @@ const ProductDetail = () => {
                  {data.description}
                </p>
 
-                <div>
-                    <div>
+                <div className='product_detail_info'>
+                    <div >
                         <h3>Price</h3>
-                        <p>
-                            <em> {data.price} </em>
+                        <p className='p_price'>
+                            <em>$ {data.price} </em>
                         </p>
                     </div>
 
                     <div>
                         <h3>Quantity</h3>
 
-                        <div>
-                            <button onClick={decrement}> - </button>
+                        <div className='dv_quantity'>
+                            <button className='btn_quantity' onClick={decrement}> - </button>
                             <p>{quantity}</p>
-                            <button onClick={increment}> + </button>
+                            <button className='btn_quantity' onClick={increment}> + </button>
                         </div>
                     </div>
-
-                    <button onClick={hanldeAddCart}>Add to cart</button>
                 </div>
+                <button className='btn_add-to-cart' onClick={hanldeAddCart}>Add to cart</button>
             </section>
             
         </section>
-        
-        <ProductList categories={data.categoryId} excludeIds={[data.id]} />
+
+        <div className='similar_items'>
+            <p className='similar_items_p'>Discover similar items</p>
+            <ProductList categories={data.categoryId} excludeIds={[data.id]} />
+          
+        </div>
+       
     </section>
   )
 }

@@ -3,9 +3,9 @@
     height: 4rem;
     padding: 1rem;
 
-    position: absolute;
+    position: fixed;
     top: 0;
-    z-index: 5;
+    z-index: 1;
 
     display: flex;
     justify-content: space-between;
@@ -43,8 +43,14 @@
 
     border-left: 1px solid #dcd9d9;
 }
+.header_item:hover{
+    color: rgba(0, 0, 255, 0.62);
+}
 .header_navlink_items{
     width: 100%;
+}
+.header_navlink_items--activate{
+     color: #f85555ab;
 }
 
 .btn_log_out{
@@ -58,6 +64,22 @@
     color: #B0B0B0;
     cursor: pointer;
 }
+.btn_cart{
+    width: 100%;
+
+    background-color: transparent;
+    border: none;
+
+    font-size: 1.8rem;
+    
+    color: #B0B0B0;
+
+    cursor: pointer;
+}
+.btn_cart:hover {
+    color: rgba(0, 0, 255, 0.62);
+}
+
 
 .btn_log_out i{
     color: rgba(22, 22, 254, 0.621);
