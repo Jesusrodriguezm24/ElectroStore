@@ -6,7 +6,7 @@ import { useCart } from '../../../hooks/queries/useCart';
 
 const ProductCard = ({ product }) => {
     const { mutate } = useAddProductToCart();
-    const { data  } = useCart();
+    const { data, isLoading  } = useCart();
     const isLogged = useSelector(store => store.auth.isLogged);
     const navigate = useNavigate();
 
@@ -39,7 +39,7 @@ const ProductCard = ({ product }) => {
         </section>
         { isAddVisible &&(
             <div className='dv_btn_add'>
-                <button className='bnt_add_to_cart_card' onClick={handleAdd}>
+                <button className='bnt_add_to_cart_card' onClick={handleAdd} disabled={isLoading}>
                 <i className='bx bx-cart-add'> Add</i>
                 </button>
             </div>

@@ -2,18 +2,26 @@ import { useNavigate, useParams } from 'react-router-dom'
 import './ProductDetail.css'
 import { useProductById } from '../../hooks/queries/useProductById';
 import ProductList from '../../components/Home/ProductList/ProductList';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAddProductToCart } from '../../hooks/queries/useAddProductToCart';
 import { useSelector } from 'react-redux';
+import { useCart } from '../../hooks/queries/useCart';
 
 const ProductDetail = () => {
 
-   const [quantity, setQuantity] = useState(1);
+  
    const { productId } = useParams();
    const { data, isLoading, isError, error } = useProductById(productId);
    const { mutate } = useAddProductToCart();
    const isLogged = useSelector(store => store.auth.isLogged);
    const navigate = useNavigate();
+   const cartQuery = useCart();
+
+   let isProductInCart = cartQuery.data?.some(cartProduct => cartProduct.productId === data.id) ?? false;
+
+   const quantityInCart = cartQuery.data?.find((cartProduct) => Number(cartProduct.productId) === Number(productId))?.quantity ?? 1;
+
+   const [quantity, setQuantity] = useState(Number(quantityInCart));
 
    const increment = () => {
         const newQuantity = quantity + 1;
@@ -31,10 +39,17 @@ const ProductDetail = () => {
     else navigate("/login");
    }
 
+
+   useEffect(() => {
+     setQuantity(Number(quantityInCart));
+   }, [quantityInCart])
+
+
    if (isLoading) return <p>Loading Products</p>;
 
    if (isError) return <p>{error.message ?? 'Not load'}</p>
-   
+
+
   return (
     <section>
         <section className='product_detail_data'>
@@ -69,7 +84,9 @@ const ProductDetail = () => {
                         </div>
                     </div>
                 </div>
-                <button className='btn_add-to-cart' onClick={hanldeAddCart}>Add to cart</button>
+                {!isProductInCart && <button className='btn_add-to-cart' onClick={hanldeAddCart}>Add to cart</button>}
+                
+                {isProductInCart && <button>Update in cart</button>}
             </section>
             
         </section>

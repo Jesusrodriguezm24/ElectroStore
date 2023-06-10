@@ -2,15 +2,15 @@ import { useState } from 'react'
 import './CartProduct.css'
 import { useUpdateCart } from '../../../hooks/queries/useUpdateCart';
 import { useSelector } from 'react-redux';
+import { useDeleteProductFromCart } from '../../../hooks/queries/useDeleteProductFromCart';
 
 const CartProduct = ( { cartProduct } ) => {
     const initialQuantity = Number(cartProduct.quantity);
     const price = Number(cartProduct.product.price);
     const { mutate, isLoading } = useUpdateCart();
+    const deleteMutation = useDeleteProductFromCart();
     const [quantity, setQuantity] = useState(initialQuantity);
     const isLogged = useSelector(store => store.auth.isLogged);
-
-    console.log(cartProduct)
 
     const increment = () => {
         const newQuantity = quantity + 1;
@@ -24,8 +24,12 @@ const CartProduct = ( { cartProduct } ) => {
       };
 
       const handleUpdate = () => {
-        //if (isLogged) mutate({cartProductId: cartProduct.id, });
+        if (isLogged) mutate({cartProductId: cartProduct.id, newQuantity: quantity });
         ////////////////
+      }
+
+      const handleDelete = () => {
+        if (isLogged) deleteMutation.mutate(cartProduct.id);
       }
 
   return (
@@ -37,7 +41,7 @@ const CartProduct = ( { cartProduct } ) => {
         <div>
             <header>
                     <h4>{cartProduct.product.title}</h4>
-                 <button>
+                 <button onClick={handleDelete} disabled={deleteMutation.isLoading}>
                     <i className='bx bxs-trash'></i>
                  </button>
             </header>

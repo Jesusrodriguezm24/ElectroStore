@@ -10,6 +10,6 @@ export const deleteProductFromCart = async (cartProductId, token) => {
       throw typeof error.response.data === "string"
         ? new Error(error.response.data)
         : error.response.data;
-    else throw new Error("Algo salio con la petición de borrado del carrito");
+    else throw new Error('Something went wrong');
   }
 };

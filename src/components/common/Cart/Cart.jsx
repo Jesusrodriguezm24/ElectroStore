@@ -1,12 +1,15 @@
+import { useSelector } from 'react-redux';
 import { useCart } from '../../../hooks/queries/useCart';
+import { useCreatePurchase } from '../../../hooks/queries/useCreatePurchase';
 import CartProduct from '../CartProduct/CartProduct';
 
 
 import './Cart.css'
 
 const Cart = ({ isVisible }) => {
-
+    const isLogged = useSelector(store => store.auth.isLogged);
     const { data, isLoading, isError, error } = useCart();
+    const createPurchaseMutation = useCreatePurchase();
 
     const toggleCart = isVisible ? "wrapper-cart" : "wrapper-cart--hidden" ;
 
@@ -18,6 +21,11 @@ const Cart = ({ isVisible }) => {
     }
 
     const total = data?.reduce( reducer, 0) ?? 0;
+
+    const handleCheckout = () => {
+        if (isLogged) createPurchaseMutation.mutate();
+
+    }
 
     if (isLoading) return <p>Loading Cart...</p>;
 
@@ -41,9 +49,9 @@ const Cart = ({ isVisible }) => {
                      <div>
                         <p>
                             <span>Total:</span>
-                            <em>{total}</em>
+                            <em>{total.toFixed(2)}</em>
                         </p>
-                        <button>Checkout</button>
+                        <button onClick={handleCheckout} disabled={createPurchaseMutation.isLoading || isLoading}>Checkout</button>
                      </div>
                 </section>
             )}

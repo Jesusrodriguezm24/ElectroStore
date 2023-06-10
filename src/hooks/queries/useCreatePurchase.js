@@ -1,13 +1,13 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useSelector } from "react-redux"
-import { addProductToCart } from "../../services/cart/addProductToCart";
+import { createPurchase } from "../../services/purchases/createPurchase";
 
 export const useCreatePurchase = () => {
     const token = useSelector((store) => store.auth.token);
 
     const queryClient = useQueryClient();
 
-    const mutation = useMutation( { mutationFn: ({ quantity, productId }) => addProductToCart({ token, quantity, productId }),
+    const mutation = useMutation( { mutationFn: () => createPurchase( token),
                                   onSuccess: async () => {
                                     await queryClient.invalidateQueries({queryKey: ["cart"]});
                                     await queryClient.invalidateQueries({queryKey: ["purchases"]});
