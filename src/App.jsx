@@ -24,10 +24,11 @@ function App() {
 
         
         <Outlet/>
-
+        <Cart isVisible={isCartVisible}/>
+        
       </main>
 
-      <Cart isVisible={isCartVisible}/>
+      
         
       <footer>
         <Footer/>

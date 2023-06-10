@@ -48,12 +48,12 @@ const Cart = ({ isVisible }) => {
                         </ul> 
                     </div>
 
-                     <div>
+                     <div className='dv_cart_product_data_price'>
                         <p>
                             <span>Total:</span>
-                            <em>{total.toFixed(2)}</em>
+                            <em>$ {total.toFixed(2)}</em>
                         </p>
-                        <button onClick={handleCheckout} disabled={createPurchaseMutation.isLoading || isLoading}>Checkout</button>
+                        <button className='btn_cart_product_checkout' onClick={handleCheckout} disabled={createPurchaseMutation.isLoading || isLoading}>Checkout</button>
                      </div>
                 </section>
             )}
