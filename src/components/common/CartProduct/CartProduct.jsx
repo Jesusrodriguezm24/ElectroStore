@@ -33,19 +33,19 @@ const CartProduct = ( { cartProduct } ) => {
       }
 
   return (
-    <article>
+    <article className='cart_product_container'>
                                                     
-        <div>
+        <div className='dv_cart_product_img'>
            <img src={cartProduct.product.images[0].url} alt={cartProduct.product.title} />
         </div>
         <div>
-            <header>
+             <header className='header_cart_product'>
                     <h4>{cartProduct.product.title}</h4>
                  <button onClick={handleDelete} disabled={deleteMutation.isLoading}>
                     <i className='bx bxs-trash'></i>
                  </button>
-            </header>
-            <div>
+             </header>
+             <div className='dv_btns_quantity_product'>
                  <button onClick={decrement}> - </button>
                       <p> {quantity} </p>
                  <button onClick={increment}> + </button>
@@ -53,13 +53,13 @@ const CartProduct = ( { cartProduct } ) => {
 
                 {initialQuantity !== quantity && <button onClick={handleUpdate} disabled={isLoading}>Update Cart</button>}
 
-                <div>
+              <div className='dv_cart_product_price'>
                  <h5>Total:</h5>
                  <p>
                      <em>$ {initialQuantity * price}</em>
                 </p>
              </div>
-         </div>
+        </div>
                                                   
 </article>
   )

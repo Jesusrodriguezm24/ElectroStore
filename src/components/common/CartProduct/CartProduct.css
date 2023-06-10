@@ -1,0 +1,32 @@
+.cart_product_container{
+    width: 100%;
+    padding: 0;
+    margin-top: 1rem;
+
+    display: flex;
+
+    
+
+}
+.dv_cart_product_img{
+    max-width: 30%;
+
+}
+.dv_cart_product_img img{
+    width: 100%;
+
+}
+.header_cart_product{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.dv_btns_quantity_product{
+
+
+}
+.dv_cart_product_price{
+
+
+}

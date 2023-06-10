@@ -40,11 +40,13 @@ const Cart = ({ isVisible }) => {
 
             {Boolean(data.length) && (
                 <section>
-                      <ul> 
-                            {data.map((cartProduct) => <li key={cartProduct.id}>
-                                                        <CartProduct cartProduct={cartProduct} />
-                                                    </li>)}
-                     </ul> 
+                     <div>
+                        <ul> 
+                                {data.map((cartProduct) => <li key={cartProduct.id}>
+                                                            <CartProduct cartProduct={cartProduct} />
+                                                        </li>)}
+                        </ul> 
+                    </div>
 
                      <div>
                         <p>
