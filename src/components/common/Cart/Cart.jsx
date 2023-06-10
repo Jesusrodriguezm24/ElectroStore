@@ -36,7 +36,7 @@ const Cart = ({ isVisible }) => {
         <aside className='cart'> 
             <h2 className='cart_title'>Shopping Cart</h2>
 
-            {!data.length && <p>Empty Cart</p>}
+            {!data.length && <p className='cls_empty_cart_text'>Empty Cart</p>}
 
             {Boolean(data.length) && (
                 <section className='car_product_container'>

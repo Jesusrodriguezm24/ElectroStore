@@ -25,22 +25,18 @@ const authSlice = createSlice({
 
         updateToken(state, action) {
             const newToken = action.payload;
-
             state.token = newToken;
-
             localStorage.setItem('sessionData', JSON.stringify({ ...state }));
         },
 
         startSession(state){
             state.isLogged = true;
-
             localStorage.setItem('sessionData', JSON.stringify({ ...state }));
         },
 
         reset(){
 
           localStorage.removeItem('sessionData') ;
-
           return emptyState;
         }
 
@@ -59,9 +55,7 @@ export const startSessionThunk = ( { email, password } ) => async (dispatch) => 
     } 
 
     dispatch(updateUserData(userData));
-
     dispatch(updateToken(sessionData.token));
-
     dispatch(startSession());
 }
 

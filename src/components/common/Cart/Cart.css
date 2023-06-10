@@ -23,7 +23,7 @@
 .cart{
     width: 100%;
     max-width: 30%;
-    height: 100%;
+
     
     padding: 1rem 0.5rem;
 
@@ -33,11 +33,21 @@
   text-align: center;
   color: #F85555;
 }
+.cls_empty_cart_text{
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 3rem;
+  margin-top: 5rem;
+
+  color: #3c43f892;
+}
 .car_product_container{
-  height: 100%;
+  margin-bottom: 15rem;
 }
 .cart_product_list_container{
   height: 100%;
+
+
 }
 .cart_product_list{
  
@@ -45,7 +55,8 @@
 }
 
 .dv_cart_product_data_price{
-  position: sticky;
+  position: fixed;
+  right: 1rem;
   bottom: 1rem;
 
   font-weight: bold;
@@ -73,7 +84,7 @@
   background-color: #F85555;
   color: #fff;
 
-  width: 40%;
+  width: 100%;
   font-size: 1rem;
   border: none;
   border-radius: 10px;
