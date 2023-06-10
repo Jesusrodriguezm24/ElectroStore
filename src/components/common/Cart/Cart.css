@@ -24,7 +24,7 @@
 .cart{
     width: 100%;
     max-width: 30%;
-
+    
     padding: 1rem 0.5rem;
 
     background-color: #fff;
@@ -42,19 +42,17 @@
   color: #3c43f892;
 }
 .car_product_container{
-  margin-bottom: 5rem;
+  margin-bottom: 5rem; 
 }
 .cart_product_list_container{
   height: 100%;
-
-
 }
 .cart_product_list{
- 
   list-style: none;
 }
 
 .dv_cart_product_data_price{
+
   position: fixed;
   right: 2rem;
   bottom: 1rem;

@@ -9,7 +9,6 @@ import './ProductDetail.css'
 
 const ProductDetail = () => {
 
-  
    const { productId } = useParams();
    const { data, isLoading, isError, error } = useProductById(productId);
    const { mutate } = useAddProductToCart();
@@ -21,7 +20,7 @@ const ProductDetail = () => {
 
    let quantityInCart = cartQuery.data?.find((cartProduct) => Number(cartProduct.productId) === Number(productId))?.quantity ?? 1;
 
-   const [quantity, setQuantity] = useState(Number(quantityInCart));
+   const [quantity, setQuantity] = useState(quantityInCart);
 
    const increment = () => {
         const newQuantity = quantity + 1;
@@ -41,7 +40,7 @@ const ProductDetail = () => {
 
 
    useEffect(() => {
-     setQuantity(Number(quantityInCart));
+     setQuantity(quantityInCart);
    }, [quantityInCart])
 
 
