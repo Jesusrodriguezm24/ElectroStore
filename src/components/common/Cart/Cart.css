@@ -5,7 +5,8 @@
   z-index: 1;
 
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  align-items: end;
 
   background-color: rgba(0, 0, 0, 0.581);
   opacity: 1;
@@ -24,7 +25,6 @@
     width: 100%;
     max-width: 30%;
 
-    
     padding: 1rem 0.5rem;
 
     background-color: #fff;
@@ -42,7 +42,7 @@
   color: #3c43f892;
 }
 .car_product_container{
-  margin-bottom: 15rem;
+  margin-bottom: 5rem;
 }
 .cart_product_list_container{
   height: 100%;
@@ -56,7 +56,7 @@
 
 .dv_cart_product_data_price{
   position: fixed;
-  right: 1rem;
+  right: 2rem;
   bottom: 1rem;
 
   font-weight: bold;
