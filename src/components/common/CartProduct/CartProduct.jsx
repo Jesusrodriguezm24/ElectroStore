@@ -38,7 +38,7 @@ const CartProduct = ( { cartProduct } ) => {
         <div className='dv_cart_product_img'>
            <img src={cartProduct.product.images[0].url} alt={cartProduct.product.title} />
         </div>
-        <div>
+        <div className='dv_data_container'>
              <header className='header_cart_product'>
                     <h4>{cartProduct.product.title}</h4>
                  <button onClick={handleDelete} disabled={deleteMutation.isLoading}>
