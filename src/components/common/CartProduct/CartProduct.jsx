@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import './CartProduct.css'
 import { useUpdateCart } from '../../../hooks/queries/useUpdateCart';
 import { useSelector } from 'react-redux';
 import { useDeleteProductFromCart } from '../../../hooks/queries/useDeleteProductFromCart';
+import './CartProduct.css'
 
 const CartProduct = ( { cartProduct } ) => {
     const initialQuantity = Number(cartProduct.quantity);
@@ -25,7 +25,6 @@ const CartProduct = ( { cartProduct } ) => {
 
       const handleUpdate = () => {
         if (isLogged) mutate({cartProductId: cartProduct.id, newQuantity: quantity });
-        ////////////////
       }
 
       const handleDelete = () => {
@@ -41,7 +40,7 @@ const CartProduct = ( { cartProduct } ) => {
         <div className='dv_data_container'>
              <header className='header_cart_product'>
                     <h4>{cartProduct.product.title}</h4>
-                 <button onClick={handleDelete} disabled={deleteMutation.isLoading}>
+                 <button className='btn_delete_cart_product' onClick={handleDelete} disabled={deleteMutation.isLoading}>
                     <i className='bx bxs-trash'></i>
                  </button>
              </header>
@@ -51,12 +50,12 @@ const CartProduct = ( { cartProduct } ) => {
                  <button onClick={increment}> + </button>
              </div>
 
-                {initialQuantity !== quantity && <button onClick={handleUpdate} disabled={isLoading}>Update Cart</button>}
+                {initialQuantity !== quantity && <button className='btn_update_product_cart' onClick={handleUpdate} disabled={isLoading}>Update Cart</button>}
 
               <div className='dv_cart_product_price'>
                  <h5>Total:</h5>
                  <p>
-                     <em>$ {initialQuantity * price}</em>
+                     <em>$ {(initialQuantity * price).toFixed(2)}</em>
                 </p>
              </div>
         </div>

@@ -20,14 +20,24 @@
 }
 .cart{
     width: 100%;
-    max-width: 25%;
+    max-width: 30%;
     height: 100%;
 
-    padding: 2rem 1rem;
+    padding: 1rem 0.5rem;
 
     background-color: #fff;
 }
 .cart_title{
  
-  
+  color: #F85555;
+}
+.car_product_container{
+  max-height: 100%;
+}
+.cart_product_list_container{
+  height: 90%;
+}
+.cart_product_list{
+  list-style: none;
+
 }

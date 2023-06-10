@@ -39,9 +39,9 @@ const Cart = ({ isVisible }) => {
             {!data.length && <p>Empty Cart</p>}
 
             {Boolean(data.length) && (
-                <section>
-                     <div>
-                        <ul> 
+                <section className='car_product_container'>
+                     <div className='cart_product_list_container'>
+                        <ul className='cart_product_list'> 
                                 {data.map((cartProduct) => <li key={cartProduct.id}>
                                                             <CartProduct cartProduct={cartProduct} />
                                                         </li>)}

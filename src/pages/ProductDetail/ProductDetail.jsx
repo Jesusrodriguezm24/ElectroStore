@@ -1,11 +1,11 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import './ProductDetail.css'
 import { useProductById } from '../../hooks/queries/useProductById';
 import ProductList from '../../components/Home/ProductList/ProductList';
 import { useEffect, useState } from 'react';
 import { useAddProductToCart } from '../../hooks/queries/useAddProductToCart';
 import { useSelector } from 'react-redux';
 import { useCart } from '../../hooks/queries/useCart';
+import './ProductDetail.css'
 
 const ProductDetail = () => {
 
@@ -19,7 +19,7 @@ const ProductDetail = () => {
 
    let isProductInCart = cartQuery.data?.some(cartProduct => cartProduct.productId === data.id) ?? false;
 
-   const quantityInCart = cartQuery.data?.find((cartProduct) => Number(cartProduct.productId) === Number(productId))?.quantity ?? 1;
+   let quantityInCart = cartQuery.data?.find((cartProduct) => Number(cartProduct.productId) === Number(productId))?.quantity ?? 1;
 
    const [quantity, setQuantity] = useState(Number(quantityInCart));
 
