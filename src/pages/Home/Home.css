@@ -5,15 +5,18 @@
     grid-template-columns: minmax(20%, 220px) 1fr;
 } 
 .input_search{
-    margin: 1rem 1rem;
-
-    padding-left: 5rem;
+    margin: 2rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;   
 }
-.input_search_value{
-    font-size: 1.5rem;
-    width: 30rem;
-    padding: 0.2rem;
 
+.input_search_value{
+    font-size: 1.3rem;
+    width: 40rem;
+    padding: 0.2rem;
+    text-align: center;
     border-radius: 10px;
 
     border: 1px solid #dcd9d9;;

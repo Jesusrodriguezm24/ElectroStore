@@ -18,18 +18,14 @@ function App() {
       <header>
         <Header updateCarVisible={toggleVisibilityCart} />
 
-       
       </header>
       <main className="main_container">
 
-        
         <Outlet/>
         <Cart isVisible={isCartVisible}/>
         
       </main>
 
-      
-        
       <footer>
         <Footer/>
       </footer>
