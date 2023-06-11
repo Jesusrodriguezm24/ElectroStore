@@ -41,9 +41,7 @@
 
   color: #3c43f892;
 }
-.car_product_container{
-  margin-bottom: 5rem; 
-}
+
 .cart_product_list_container{
   height: 100%;
 }
@@ -53,19 +51,23 @@
 
 .dv_cart_product_data_price{
 
-  position: fixed;
+  position: sticky;
   right: 2rem;
   bottom: 1rem;
 
   font-weight: bold;
 
+  
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  
+
+  background: #e4dddd;
+  border-radius: 15px;  
   align-items: end;
-  
+
   margin-top: 1.5rem;
+  padding: 1rem;
 
 }
 .dv_cart_product_data_price p{

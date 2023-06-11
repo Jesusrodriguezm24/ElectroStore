@@ -28,14 +28,16 @@ const ProductCard = ({ product }) => {
                 <img className='card_img visible' src={product.images[0].url} alt={product.title + "image 1"} />
                 <img className='card_img hidden' src={product.images[1].url} alt={product.title + "image 2"} />
             </div>
-
-            <p className='sub_name'>{product.brand}</p>
-            <h2 className='info_data'>{product.title}</h2>
-   
-            <p className='sub_name'>Price</p>
-            <h3>
-                <em className='info_data_price'>{product.price}</em>
-            </h3>
+            
+            <div className='product_card_details'>
+                <p className='sub_name'>{product.brand}</p>
+                <h2 className='info_data'>{product.title}</h2>
+    
+                <p className='sub_name'>Price</p>
+                <h3>
+                    <em className='info_data_price'>{product.price}</em>
+                </h3>
+            </div>
         </section>
         { isAddVisible &&(
             <div className='dv_btn_add'>
@@ -45,7 +47,7 @@ const ProductCard = ({ product }) => {
             </div>
         )}
 
-        { !isAddVisible && <p>The product is already in the cart</p>}
+        { !isAddVisible && <p className='p_product_in_cart_text'>The product is already in the cart</p>}
         
     </section>
   )
