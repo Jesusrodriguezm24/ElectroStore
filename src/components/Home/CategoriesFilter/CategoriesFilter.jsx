@@ -6,6 +6,9 @@ const CategoriesFilter = ({ formId, onChangeCategories, initialCategories = [] }
     const { data, isLoading, isError, error } = useCategories();
     const [categoryIdList, setCategoryIdList] = useState(initialCategories);
     const isFirstRender = useRef(true);
+    const [isHiddenCategories, setIsHiddenCategories] = useState(false);
+
+
 
     const addToList = (categoryId) => {
         const copyList = [...categoryIdList];
@@ -31,10 +34,19 @@ const CategoriesFilter = ({ formId, onChangeCategories, initialCategories = [] }
         if (isCheked) setCategoryIdList([]);
     }
 
+    const handleHiddenCategories = () => {
+         setIsHiddenCategories(!isHiddenCategories);
+
+            
+    }
+   
+    
     useEffect(() => {
         if (isFirstRender.current) isFirstRender.current = false;
         else onChangeCategories();
     }, [categoryIdList, onChangeCategories]);
+
+
 
     if  (isLoading) return <p>Loading categories...</p>
 
@@ -42,21 +54,26 @@ const CategoriesFilter = ({ formId, onChangeCategories, initialCategories = [] }
 
  return (
     <fieldset form={formId} className='categories_container'>
-        <h2>Categories</h2>
-
-        <div>
-            <input type="checkbox" onChange={(e)=> handleEmpty(e.target.checked)} checked={categoryIdList.length === 0} form={formId} name="categories" id="all_categories" value=""/>
-            <label htmlFor="all_categories">All</label>
-
-            
+        <div className='dv_btn_categories_control'>
+            <h2>Categories</h2>
+            <button className='btn_categories_option' onClick={handleHiddenCategories}>{isHiddenCategories ? <i className='bx bx-chevron-down'></i> : <i className='bx bx-chevron-up'></i>}</button>
         </div>
+        
+        <section className={isHiddenCategories ? "hidden" : "visible"}>
+            <div>
+                <input type="checkbox" onChange={(e)=> handleEmpty(e.target.checked)} checked={categoryIdList.length === 0} form={formId} name="categories" id="all_categories" value=""/>
+                <label htmlFor="all_categories">All</label>
 
-        {data.map(category => (
-                                <div key={category.id}>
-                                    <input type='checkbox' onChange={(e)=>handleChange(e.target.checked, category.id)} checked={categoryIdList.includes(category.id)} name='categories' form={formId} id={category.id + "category"} value={category.id}></input>
-                                    <label htmlFor={category.id + "category"}>{category.name}</label>
-                                </div>))}
+            </div>
 
+            {data.map(category => (
+                                    <div key={category.id}>
+                                        <input type='checkbox' onChange={(e)=>handleChange(e.target.checked, category.id)} checked={categoryIdList.includes(category.id)} name='categories' form={formId} id={category.id + "category"} value={category.id}></input>
+                                        <label htmlFor={category.id + "category"}>{category.name}</label>
+                                    </div>))}
+
+        </section>
+       
     </fieldset>
   )
 }

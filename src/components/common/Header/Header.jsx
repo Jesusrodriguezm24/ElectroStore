@@ -4,10 +4,12 @@ import { reset } from '../../../store/slices/authSlice';
 
 
 import './Header.css'
+import { useCart } from '../../../hooks/queries/useCart';
 const Header = ({ updateCarVisible }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLogged = useSelector((store) => store.auth.isLogged);
+  const { data } = useCart();
 
   const userTo = isLogged ? "/profile" : "/login";
   const puchaseTo = isLogged ? "/purchases" : "/login" ;
@@ -54,7 +56,15 @@ const Header = ({ updateCarVisible }) => {
 
            
               <li className='header_item' onClick={()=>{}}>
-                 <button onClick={handleCartClik} className='btn_cart'><i className='bx bx-cart' ></i></button> 
+                 <button onClick={handleCartClik} className='btn_cart shopping_cart'>
+                  <i className='bx bx-cart' ></i>
+                  { data?.length >= 1 && (
+                                    <div className='dv_data_length'>
+                                      <span>{data.length}</span>
+                                    </div>
+                 )}
+                </button>
+                 
               </li>
             
 

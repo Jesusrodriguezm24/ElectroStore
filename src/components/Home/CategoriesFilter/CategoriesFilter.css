@@ -9,3 +9,28 @@
 
     border: none;
 }
+ .visible {
+   
+    transition: height 0.5s ease-out;
+  }
+  .hidden {
+    height: 0;
+  }
+  .dv_btn_categories_control{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding: 0.5rem;
+
+    border-bottom: 3px solid #dcd9d9;
+  }
+  .btn_categories_option{
+    width: 2.5rem;
+    border: none;
+
+    background-color: transparent;
+
+    font-weight: bold;
+    font-size: 1.5rem;
+  }

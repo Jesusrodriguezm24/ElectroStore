@@ -20,6 +20,7 @@ const Cart = ({ isVisible }) => {
         return acc + quantity * price;
     }
 
+    console.log(data)
     const total = data?.reduce( reducer, 0) ?? 0;
 
     const handleCheckout = () => {

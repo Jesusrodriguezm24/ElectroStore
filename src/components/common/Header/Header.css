@@ -53,6 +53,15 @@
      color: #f85555ab;
 }
 
+.dv_data_length{
+    font-size: 0.9rem;
+    padding: 0.2rem 0.4rem;
+
+    
+    background-color: #F85555;
+    color: #fff;
+    border-radius: 50%;
+}
 .btn_log_out{
 
     font-size: 1.8rem;
@@ -71,6 +80,10 @@
     border: none;
 
     font-size: 1.8rem;
+
+    display: flex;
+    justify-content: center;
+    justify-content: center;
     
     color: #B0B0B0;
 
