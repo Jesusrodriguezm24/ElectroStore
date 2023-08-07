@@ -3,7 +3,6 @@ import { useCart } from '../../../hooks/queries/useCart';
 import { useCreatePurchase } from '../../../hooks/queries/useCreatePurchase';
 import CartProduct from '../CartProduct/CartProduct';
 
-
 import './Cart.css'
 
 const Cart = ({ isVisible }) => {
@@ -20,7 +19,6 @@ const Cart = ({ isVisible }) => {
         return acc + quantity * price;
     }
 
-    console.log(data)
     const total = data?.reduce( reducer, 0) ?? 0;
 
     const handleCheckout = () => {

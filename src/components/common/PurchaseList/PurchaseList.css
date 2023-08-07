@@ -1,0 +1,37 @@
+.section_item_container{
+    padding: 2rem 0.5rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+ 
+    background-color: rgba(247, 226, 200, 0.275);
+    margin-bottom: 1rem;
+}
+
+.dv_item_img{
+    width: 150px;
+    height: 150px;
+
+}
+.dv_item_img img{
+    width: 100%;
+    height: 100%;
+}
+
+.p_item_produc_name{
+    width: 12rem ;   
+}
+.p_item_quantity{
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+}
+.p_item_price{
+    text-align: center;
+    color: rgba(5, 179, 5, 0.788);
+}
+
+.p_item_date{
+    text-align: center;
+}

@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import PageNotFound from "../pages/PageNotFound/PageNotFound";
 import Login from "../pages/Login/Login";
-import Puchases from "../pages/Puchases/Puchases";
+import Purchases from "../pages/Purchases/Purchases";
 import ProtectedRoute from "../components/common/ProtectedRoute/ProtectedRoute";
 import Profile from "../pages/Profile/Profile";
 import Home from "../pages/Home/Home";
@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
                 path: "/purchases",
                 element: 
                 ( <ProtectedRoute>
-                    <Puchases/>
+                    <Purchases/>
                   </ProtectedRoute> 
                 ),
             },

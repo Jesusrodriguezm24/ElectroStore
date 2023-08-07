@@ -1,8 +1,8 @@
 import { axiosInstance } from "../../api/axiosInstance";
 
-export const deleteProductFromCart = async (cartProductId, token) => {
+export const deletePurchase = async (id, token) => {
   try {
-    await axiosInstance.delete(`carts/${cartProductId}`, {
+    await axiosInstance.delete(`purchases/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
   } catch (error) {

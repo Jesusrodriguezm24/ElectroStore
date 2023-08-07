@@ -1,19 +1,23 @@
 .categories_container{
     margin: 1rem;
 
-    padding: 1rem;
+    padding: 1rem 0.5rem;
 
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 
     border: none;
+
+    transition: transform 0.3s ease-out;
 }
  .visible {
-   
-    transition: height 0.5s ease-out;
+
+  transition: transform 1s ease-in;
   }
   .hidden {
+    transform: translateY(-15%);
+    overflow: hidden;
     height: 0;
   }
   .dv_btn_categories_control{

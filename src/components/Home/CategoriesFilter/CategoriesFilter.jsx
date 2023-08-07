@@ -56,9 +56,9 @@ const CategoriesFilter = ({ formId, onChangeCategories, initialCategories = [] }
     <fieldset form={formId} className='categories_container'>
         <div className='dv_btn_categories_control'>
             <h2>Categories</h2>
-            <button className='btn_categories_option' onClick={handleHiddenCategories}>{isHiddenCategories ? <i className='bx bx-chevron-down'></i> : <i className='bx bx-chevron-up'></i>}</button>
+            <button className='btn_categories_option' onClick={handleHiddenCategories}> <i className='bx bx-chevron-up'></i></button>
         </div>
-        
+        {/* {isHiddenCategories ? <i className='bx bx-chevron-down'></i> : ""} */}
         <section className={isHiddenCategories ? "hidden" : "visible"}>
             <div>
                 <input type="checkbox" onChange={(e)=> handleEmpty(e.target.checked)} checked={categoryIdList.length === 0} form={formId} name="categories" id="all_categories" value=""/>

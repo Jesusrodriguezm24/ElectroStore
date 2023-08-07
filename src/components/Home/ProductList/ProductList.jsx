@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useProducts } from '../../../hooks/queries/useProducts';
 import ProductCard from '../ProductCard/ProductCard';
 
-
 import './ProductList.css';
 
 const ProductList = ({ categories, title, excludeIds = [] }) => {
