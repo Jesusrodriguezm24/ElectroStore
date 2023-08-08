@@ -6,7 +6,7 @@ import { startSessionThunk } from '../../store/slices/authSlice'
 
 
 import './Login.css'
-import { Navigate, useLocation } from 'react-router-dom'
+import { Link, Navigate, useLocation } from 'react-router-dom'
 
 
 const Login = () => {
@@ -40,6 +40,10 @@ const Login = () => {
 
             <LoginForm onLogin={handleLogin} />
         
+            <p className='p_sign_up'>
+                Don't have an account? <Link className='color_Link' to='/sign_up'>Sign Up</Link>
+            </p>
+
         </section>
 
         {(isLogged) && <Navigate to={from ?? "/"}/>}

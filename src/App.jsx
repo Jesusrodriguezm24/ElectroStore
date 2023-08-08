@@ -10,13 +10,16 @@ function App() {
 
   const toggleVisibilityCart = () => {
     setIsCartVisible(!isCartVisible);
+  };
 
-};
+  const closeCart = () => {
+    setIsCartVisible(false);
+  }
 
   return (
     <section className="app_container">
       <header>
-        <Header updateCarVisible={toggleVisibilityCart} />
+        <Header updateCarVisible={toggleVisibilityCart} closeCart={closeCart} />
 
       </header>
       <main className="main_container">

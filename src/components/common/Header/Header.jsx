@@ -1,11 +1,10 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { reset } from '../../../store/slices/authSlice';
-
-
 import './Header.css'
 import { useCart } from '../../../hooks/queries/useCart';
-const Header = ({ updateCarVisible }) => {
+
+const Header = ({ updateCarVisible, closeCart }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLogged = useSelector((store) => store.auth.isLogged);
@@ -16,7 +15,8 @@ const Header = ({ updateCarVisible }) => {
 
   const logout = () => { 
     dispatch(reset()); 
-     navigate("/login");
+    closeCart();
+    navigate("/login");
   }
 
   const handleCartClik = () => {
@@ -58,7 +58,7 @@ const Header = ({ updateCarVisible }) => {
               <li className='header_item' onClick={()=>{}}>
                  <button onClick={handleCartClik} className='btn_cart shopping_cart'>
                   <i className='bx bx-cart' ></i>
-                  { data?.length >= 1 && (
+                  { data?.length >= 1 && isLogged && (
                                     <div className='dv_data_length'>
                                       <span>{data.length}</span>
                                     </div>
