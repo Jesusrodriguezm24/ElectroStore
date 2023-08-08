@@ -10,6 +10,8 @@ const Cart = ({ isVisible }) => {
     const { data, isLoading, isError, error } = useCart();
     const createPurchaseMutation = useCreatePurchase();
 
+   
+
     const toggleCart = isVisible ? "wrapper-cart" : "wrapper-cart--hidden" ;
 
     const reducer = (acc, cartProduct) => {
@@ -26,7 +28,8 @@ const Cart = ({ isVisible }) => {
 
     }
 
-    if (isLoading) return <p>Loading Cart...</p>;
+
+    if (isLoading) return <p></p>;
 
     if (isError) return <p>{error.message ?? "Not load cart"}</p>;
 

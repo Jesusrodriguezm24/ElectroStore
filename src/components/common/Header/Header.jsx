@@ -10,6 +10,8 @@ const Header = ({ updateCarVisible, closeCart }) => {
   const isLogged = useSelector((store) => store.auth.isLogged);
   const { data } = useCart();
 
+  //const cartContainer = document.querySelector('.cart');
+
   const userTo = isLogged ? "/profile" : "/login";
   const puchaseTo = isLogged ? "/purchases" : "/login" ;
 
@@ -29,6 +31,17 @@ const Header = ({ updateCarVisible, closeCart }) => {
     if (isActivate) return "header_navlink_items header_navlink_items--activate"
     else return "header_navlink_items"
   }
+
+  // document.addEventListener('click', (event) => {
+      
+  //       if (!cartContainer.contains(event.target) && updateCarVisible == true) {
+  //         //cartContainer.style.display = 'none';
+  //         closeCart();
+  //       }
+  //       event.stopPropagation();
+  //       console.log(event)
+  //     });
+
 
   return (
     <header className='header_container'>
@@ -69,7 +82,7 @@ const Header = ({ updateCarVisible, closeCart }) => {
             
 
               { isLogged && (
-                <li>
+                <li className='li_btn_log_out'>
                     <button className='btn_log_out' onClick={logout}><i className='bx bx-log-out'></i></button>
                 </li>
               )}

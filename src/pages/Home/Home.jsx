@@ -4,7 +4,6 @@ import CategoriesFilter from '../../components/Home/CategoriesFilter/CategoriesF
 import ProductList from '../../components/Home/ProductList/ProductList'
 import { Form, useLoaderData, useSubmit } from 'react-router-dom';
 
-
 import './Home.css'
 
 const Home = () => {

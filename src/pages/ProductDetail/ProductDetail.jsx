@@ -50,10 +50,10 @@ const ProductDetail = () => {
 
 
   return (
-    <section>
+    <section className='product_detail_container'>
         <section className='product_detail_data'>
             <section className='product_detail_img'>
-                <img src={data.images[0].url} alt={data.title} />
+                <img src={data.images[0]?.url} alt={data.title} />
             </section>
 
             <section className='product_detail_item'>

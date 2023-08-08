@@ -14,6 +14,8 @@
     max-width: 30%;
     padding: 30px;
     width: 100%;
+
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.269);
 }
 .page_login_text{
     display: block;
