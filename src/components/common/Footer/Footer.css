@@ -10,7 +10,7 @@
     background-color:rgba(0, 0, 0, 0.53) ;
   }
   .createBy{
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
 
     display: flex;
     justify-content: center;
@@ -23,14 +23,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    font-size: 10px;
   
     color: white;
   }
   .create_data{
     display: flex;
 
-    font-size: 1rem;
+    font-size: 0.7rem;
     gap: 5px;
   }
 
@@ -40,29 +40,27 @@
     justify-content: space-evenly;
     gap: 1.5rem;
 
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
   }
   .contact_icons{
-    width: 3rem ;
-    height: 2rem;
+    width: 1.5rem ;
+    height: 1.3rem;
     
     display: flex;
     justify-content: center;
     align-items: center;
 
     border-radius: 10px;
-   
-
     background-color: rgba(44, 44, 44, 0.448);
 
   }
   .contact_icons i{
-    font-size: 1.5rem;
+    font-size: 1rem;
 
   }
   .contact_icons i:hover{
     color: blue;
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
   a{
     text-decoration: unset;
