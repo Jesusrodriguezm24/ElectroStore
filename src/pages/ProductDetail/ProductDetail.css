@@ -1,5 +1,6 @@
 .product_detail_container{
     width: 100%;
+
 }
 .product_detail_data{
     width: 100%;
@@ -79,6 +80,7 @@
 }
 .similar_items{
     padding: 1rem;
+
 }
 .similar_items_p{
 
