@@ -41,7 +41,12 @@ const SignUpForm = () => {
 
   return (
     <section className='section_form_sign_up'>
+            
            <form className='form_sign_up_container' onSubmit={handleSubmit}>
+                <div className='form_sign_up_title'>
+                    <h2>Create User</h2>
+                </div>
+                
                 <div className='form_label_name'>
                     <label htmlFor={firstNameId}>First Name</label>
                 </div>
@@ -64,7 +69,7 @@ const SignUpForm = () => {
                 <div className='form_input_btn_visible'>
                     <input type={isPasswordVisible ? 'text' : 'password'} className='form_input_data' onChange={handleChange} value={formData.password} name="password" id={passwordId} required/>
                     
-                    <button  type='button'><i className='bx bx-low-vision btn_eye' onClick={()=>setIsPasswordVisible(!isPasswordVisible)}></i></button>
+                    <button className='btn_eye_container' type='button'><i className='bx bx-low-vision btn_eye' onClick={()=>setIsPasswordVisible(!isPasswordVisible)}></i></button>
                 </div>
 
                 <div className='form_label_name'>

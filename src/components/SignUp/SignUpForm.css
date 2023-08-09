@@ -1,6 +1,6 @@
 .section_form_sign_up{
-    padding: 5rem;
-
+    padding: 6rem;
+   
     width: 100%;
     height: 100vh;
     display: flex;
@@ -17,4 +17,11 @@
     background-color: white;
 
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.269);
+}
+
+.form_sign_up_title{
+    text-align: center;
+    color: rgba(21, 21, 248, 0.641);
+
+    margin-bottom: 1rem;
 }

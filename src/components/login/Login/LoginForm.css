@@ -1,7 +1,6 @@
 .form_label_name{
     color: #515151;
     font-family: Yantramanav,sans-serif;
-
 }
 .form_input_data{
     border: 1px solid rgba(0,0,0,.2);
@@ -51,7 +50,6 @@
     padding: 9px;
     width: 100%;
 }
-
 .p_credencial_error{
     font-size: 14px;
     text-align: center;
