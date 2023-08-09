@@ -56,8 +56,107 @@
 }
 .p_sign_up{
     text-align: center;
+   
 }
 .color_Link{
     
     color: #646cff;
+}
+
+
+@media (max-width: 993px) {
+   
+    .page_login_data{
+        max-width: 40%;
+    }
+    .page_login_text{
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+}
+  
+@media (max-width: 769px) {
+    .page_login_data{
+        max-width: 46%;
+
+    }
+    .p_sign_up{
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 579px) {
+    .page_login_data{
+        max-width: 50%;
+
+    }
+    .page_login_text{
+        font-size: 1.1rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    .test_data_title{
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+    }
+    .test_data_list{
+        gap: 0.6rem;
+    }
+    .test_data_item{
+        font-size: 0.8rem;
+    }
+    .test_data_item i{
+        font-size: 0.8rem;
+    }
+    .p_sign_up{
+        font-size: 0.8rem;
+    }
+
+}
+@media (max-width: 393px) {
+    .page_login_data{
+        max-width: 70%;
+    }
+    .page_login_text{
+        font-size: 1rem;
+    }
+    .test_data_title{
+        font-size: 0.9rem;
+    }
+    .test_data_list{
+        gap: 0.5rem;
+    }
+    .test_data_item{
+        font-size: 0.75rem;
+    }
+    .test_data_item i{
+        font-size: 0.75rem;
+    }
+    .p_sign_up{
+        font-size: 0.7rem;
+    }
+
+}
+@media (max-width: 321px) {
+    .page_login_data{
+        max-width: 80%;
+    }
+    .page_login_text{
+        font-size: 0.9rem;
+    }
+    .test_data_title{
+        font-size: 0.8rem;
+    }
+    .test_data_list{
+        gap: 0.4rem;
+    }
+    .test_data_item{
+        font-size: 0.7rem;
+    }
+    .test_data_item i{
+        font-size: 0.7rem;
+    }
+    .p_sign_up{
+        font-size: 0.7rem;
+    }
+
 }

@@ -55,3 +55,56 @@
     text-align: center;
     color: red;
 }
+
+
+@media (max-width: 993px) {
+ 
+
+    /* .btn_eye_container{
+       background-color: #fff;
+       
+    }
+    .btn_eye{
+        font-size: 1.4rem;
+        color: #51515178;
+    
+        font-size: 20px;
+        
+        cursor: pointer;
+    }
+    .form_btn_login{
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+    
+        background: #f85555;;
+        color: #fff;
+        margin: 10px 0 25px;
+        padding: 9px;
+        width: 100%;
+    }
+    .p_credencial_error{
+        font-size: 14px;
+        text-align: center;
+        color: red;
+    } */
+
+}
+  
+@media (max-width: 769px) {
+
+
+}
+@media (max-width: 579px) {
+
+
+}
+@media (max-width: 393px) {
+
+
+
+}
+@media (max-width: 321px) {
+
+
+}
