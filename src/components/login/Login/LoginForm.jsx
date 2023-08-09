@@ -1,7 +1,7 @@
 import { useId, useState } from 'react'
 import './LoginForm.css'
 
-const LoginForm = ( {onLogin} ) => {
+const LoginForm = ( {onLogin, isLoginError} ) => {
     const emailId = useId();
     const passwordId = useId();
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -20,9 +20,7 @@ const LoginForm = ( {onLogin} ) => {
         e.preventDefault();
 
         if (!formData.email || !formData.password) return;
-
         onLogin(formData);
-
     }
 
   return (
@@ -38,11 +36,17 @@ const LoginForm = ( {onLogin} ) => {
 
         <div className='form_input_btn_visible'>
             <input type={isPasswordVisible ? 'text' : 'password'} className='form_input_data' onChange={handleChange} value={formData.password} name="password" id={passwordId} required/>
-            
-            <button  type='button'><i className='bx bx-low-vision btn_eye' onClick={()=>setIsPasswordVisible(!isPasswordVisible)}></i></button>
+            <button className='btn_eye_container' type='button'>
+                <i className='bx bx-low-vision btn_eye' onClick={()=>setIsPasswordVisible(!isPasswordVisible)}></i>
+            </button>
         </div>
 
-
+        {(isLoginError) && (
+            <div className='p_credencial_error'>
+                <p>Invalid credentials!</p>
+            </div>
+        )}
+        
         <div>
             <button type="submit" className='form_btn_login'>Login</button>
         </div>

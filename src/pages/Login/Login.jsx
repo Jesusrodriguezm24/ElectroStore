@@ -7,6 +7,7 @@ import { startSessionThunk } from '../../store/slices/authSlice'
 
 import './Login.css'
 import { Link, Navigate, useLocation } from 'react-router-dom'
+import { useState } from 'react'
 
 
 const Login = () => {
@@ -14,11 +15,13 @@ const Login = () => {
     const isLogged = useSelector((store)=>store.auth.isLogged);
     const location = useLocation();
     
+    const [ isLoginError, setIsLoginError ] = useState(false);
+    
     const from = location.store?.from;
 
     const handleLogin = (loginData) => {
-   
         dispatch(startSessionThunk(loginData));
+        if(!isLogged) setIsLoginError(true);
     }
 
   return (
@@ -38,7 +41,7 @@ const Login = () => {
                 </ul>
             </div>
 
-            <LoginForm onLogin={handleLogin} />
+            <LoginForm onLogin={handleLogin} isLoginError={isLoginError} />
         
             <p className='p_sign_up'>
                 Don't have an account? <Link className='color_Link' to='/sign_up'>Sign Up</Link>

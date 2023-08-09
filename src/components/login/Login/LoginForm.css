@@ -17,22 +17,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
 }
 .form_input_btn_visible button{
-
-    border: 1px solid rgba(0,0,0,.2);
     display: flex;
     align-items: start;
+    justify-content: center;
 
     margin-bottom: 0.5rem;
     padding: 0.1rem 0;
-    
+
+    border: none;    
+}
+.btn_eye_container{
+   background-color: #fff;
+   
 }
 .btn_eye{
     font-size: 1.4rem;
-    color: #515151ce;
+    color: #51515178;
 
+    font-size: 20px;
+    
     cursor: pointer;
 }
 .form_btn_login{
@@ -45,4 +50,10 @@
     margin: 10px 0 25px;
     padding: 9px;
     width: 100%;
+}
+
+.p_credencial_error{
+    font-size: 14px;
+    text-align: center;
+    color: red;
 }
