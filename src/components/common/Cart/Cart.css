@@ -1,7 +1,7 @@
 .wrapper-cart{
   position: fixed;
   inset:0 ;
-  top: 4rem;
+  top: 2.8rem;
   z-index: 1;
 
   display: flex;

@@ -22,12 +22,9 @@
 .dv_cart_product_img{
     max-width: 30%;
   
-
     display: flex;
     justify-content: center;
     align-items: center;
- 
-    
 
 }
 .dv_cart_product_img img{
