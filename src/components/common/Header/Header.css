@@ -57,7 +57,7 @@
     font-size: 0.9rem;
     padding: 0.2rem 0.4rem;
 
-    
+
     background-color: #F85555;
     color: #fff;
     border-radius: 50%;
@@ -80,6 +80,7 @@
 .btn_cart{
     width: 100%;
 
+   
     background-color: transparent;
     border: none;
 

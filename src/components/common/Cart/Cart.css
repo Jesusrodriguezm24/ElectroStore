@@ -94,3 +94,49 @@
   cursor: pointer;
 
 }
+
+  
+@media (max-width: 769px) {
+
+  .cart{
+      max-width: 42%;
+  }
+  .cart_title{
+    font-size: 1.3rem;
+  }
+
+}
+@media (max-width: 579px) {
+  .cart{
+    max-width: 50%;
+  }
+  .cart_title{
+    font-size: 1.3rem;
+  }
+
+}
+@media (max-width: 431px) {
+  .cart{
+    max-width: 70%;
+  }
+  .cart_title{
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 393px) {
+  .cart{
+    max-width: 75%;
+  }
+  .cart_title{
+    font-size: 1.15rem;
+  }
+}
+@media (max-width: 321px) {
+  .cart{
+    max-width: 90%;
+  }
+  .cart_title{
+    font-size: 1.2rem;
+  }
+
+}
