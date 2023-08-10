@@ -110,7 +110,12 @@
     .p_sign_up{
         font-size: 0.8rem;
     }
-
+}
+@media (max-width: 431px) {
+    .page_login_data{
+        max-width: 80%;
+    }
+    
 }
 @media (max-width: 393px) {
     .page_login_data{
