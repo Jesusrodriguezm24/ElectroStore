@@ -17,8 +17,6 @@
     background-color: white;
 
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.269);
-
-
 }
 
 .form_sign_up_title{
@@ -39,38 +37,29 @@
 @media (max-width: 769px) {
     .form_sign_up_container{
         width: 65%;
-
     }
-
 }
 @media (max-width: 579px) {
     .section_form_sign_up{
-        padding: 5rem 4rem;
-       
+        padding: 5rem 4rem;  
     }
     .form_sign_up_container{
         width: 95%;
     }
-
 }
 @media (max-width: 393px) {
     .section_form_sign_up{
-        padding: 5rem 2rem;
-       
+        padding: 5rem 2rem;  
     }
     .form_sign_up_container{
         width: 100%;
     }
-
-
 }
 @media (max-width: 321px) {
     .section_form_sign_up{
-        padding: 5rem 1rem;
-       
+        padding: 5rem 1rem;  
     }
     .form_sign_up_container{
         width: 100%;
     }
-
 }
